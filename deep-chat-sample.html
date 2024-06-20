@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deep Chat Integration</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      #deep-chat-container {
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+      }
+    </style>
+    <script
+      src="https://unpkg.com/deep-chat@1.4.11/dist/deepChat.bundle.js"
+      type="module"
+    ></script>
+  </head>
+  <body>
+    <div id="deep-chat-container">
+      <deep-chat
+        request='{
+        "url": " http://localhost:8080/chat",
+        "method": "POST",
+        "headers": {"customName": "customHeaderValue"},
+        "additionalBodyProps": {"customBodyField": "customBodyValue"}
+      }'
+      ></deep-chat>
+    </div>
+  </body>
+</html>
